@@ -1,0 +1,37 @@
+name: "得点ランキング TOP10"
+slug: top-scorers
+version: 1
+tableName: player_stats
+spaceSlug: premier-league
+description: "選手別ゴール数ランキング"
+metricQuery:
+  exploreName: player_stats
+  dimensions:
+    - player_stats_player_name
+    - player_stats_team_short_name
+    - player_stats_total_goals
+  metrics: []
+  filters:
+    dimensions:
+      id: root
+      and:
+        - id: goals-filter
+          target:
+            fieldId: player_stats_total_goals
+          operator: greaterThan
+          values:
+            - 0
+  sorts:
+    - fieldId: player_stats_total_goals
+      descending: true
+  limit: 10
+  tableCalculations: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: player_stats_player_name
+      yField:
+        - player_stats_total_goals
+      flipAxes: true
+    eChartsConfig: {}

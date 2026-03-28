@@ -1,0 +1,40 @@
+contentType: dashboard
+description: "2024-25シーズン前半のチーム成績・得点分析"
+name: "プレミアリーグ ダッシュボード"
+slug: premier-league-overview
+spaceSlug: premier-league
+tabs: []
+tiles:
+  - h: 4
+    properties:
+      chartSlug: points-ranking
+    tabUuid: null
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 0
+  - h: 4
+    properties:
+      chartSlug: top-scorers
+    tabUuid: null
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 0
+  - h: 3
+    properties:
+      chartSlug: goals-for-against
+    tabUuid: null
+    type: saved_chart
+    w: 18
+    x: 0
+    "y": 4
+  - h: 3
+    properties:
+      chartSlug: goals-by-nationality
+    tabUuid: null
+    type: saved_chart
+    w: 18
+    x: 18
+    "y": 4
+version: 1

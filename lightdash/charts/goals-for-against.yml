@@ -1,0 +1,29 @@
+name: "チーム別 得点 vs 失点"
+slug: goals-for-against
+version: 1
+tableName: team_standings
+spaceSlug: premier-league
+description: "チームごとの得点と失点の比較"
+metricQuery:
+  exploreName: team_standings
+  dimensions:
+    - team_standings_short_name
+    - team_standings_goals_for
+    - team_standings_goals_against
+  metrics: []
+  filters: {}
+  sorts:
+    - fieldId: team_standings_goals_for
+      descending: true
+  limit: 20
+  tableCalculations: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: team_standings_short_name
+      yField:
+        - team_standings_goals_for
+        - team_standings_goals_against
+      flipAxes: false
+    eChartsConfig: {}

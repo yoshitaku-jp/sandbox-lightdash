@@ -1,0 +1,27 @@
+name: "勝ち点ランキング"
+slug: points-ranking
+version: 1
+tableName: team_standings
+spaceSlug: premier-league
+description: "プレミアリーグ 勝ち点ランキング（横棒グラフ）"
+metricQuery:
+  exploreName: team_standings
+  dimensions:
+    - team_standings_team_name
+    - team_standings_points
+  metrics: []
+  filters: {}
+  sorts:
+    - fieldId: team_standings_points
+      descending: true
+  limit: 20
+  tableCalculations: []
+chartConfig:
+  type: cartesian
+  config:
+    layout:
+      xField: team_standings_team_name
+      yField:
+        - team_standings_points
+      flipAxes: true
+    eChartsConfig: {}

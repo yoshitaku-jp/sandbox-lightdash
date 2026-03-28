@@ -1,0 +1,21 @@
+name: "国籍別ゴール数"
+slug: goals-by-nationality
+version: 1
+tableName: player_stats
+spaceSlug: premier-league
+description: "国籍別の総ゴール数（円グラフ）"
+metricQuery:
+  exploreName: player_stats
+  dimensions:
+    - player_stats_nationality
+  metrics:
+    - player_stats_sum_goals
+  filters: {}
+  sorts:
+    - fieldId: player_stats_sum_goals
+      descending: true
+  limit: 10
+  tableCalculations: []
+chartConfig:
+  type: pie
+  config: {}

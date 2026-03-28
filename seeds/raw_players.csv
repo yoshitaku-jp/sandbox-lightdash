@@ -1,0 +1,41 @@
+player_id,team_id,player_name,position,nationality
+1,12,Mohamed Salah,FW,Egypt
+2,1,Bukayo Saka,FW,England
+3,13,Erling Haaland,FW,Norway
+4,6,Cole Palmer,FW,England
+5,16,Chris Wood,FW,New Zealand
+6,3,Justin Kluivert,FW,Netherlands
+7,18,Dominic Solanke,FW,England
+8,15,Alexander Isak,FW,Sweden
+9,5,Joao Pedro,FW,Brazil
+10,2,Ollie Watkins,FW,England
+11,14,Bruno Fernandes,MF,Portugal
+12,1,Martin Odegaard,MF,Norway
+13,12,Luis Diaz,FW,Colombia
+14,4,Bryan Mbeumo,FW,Cameroon
+15,9,Alex Iwobi,MF,Nigeria
+16,20,Matheus Cunha,FW,Brazil
+17,19,Jarrod Bowen,FW,England
+18,7,Jean-Philippe Mateta,FW,France
+19,13,Phil Foden,MF,England
+20,1,Kai Havertz,FW,Germany
+21,12,Diogo Jota,FW,Portugal
+22,6,Nicolas Jackson,FW,Senegal
+23,18,Son Heung-min,FW,South Korea
+24,15,Anthony Gordon,FW,England
+25,2,Morgan Rogers,MF,England
+26,14,Rasmus Hojlund,FW,Denmark
+27,8,Dominic Calvert-Lewin,FW,England
+28,11,Jamie Vardy,FW,England
+29,17,Cameron Archer,FW,England
+30,10,Liam Delap,FW,England
+31,12,Cody Gakpo,FW,Netherlands
+32,13,Kevin De Bruyne,MF,Belgium
+33,1,Gabriel,DF,Brazil
+34,12,Virgil van Dijk,DF,Netherlands
+35,6,Enzo Fernandez,MF,Argentina
+36,16,Callum Hudson-Odoi,FW,England
+37,3,Antoine Semenyo,FW,Ghana
+38,15,Bruno Guimaraes,MF,Brazil
+39,14,Amad Diallo,FW,Ivory Coast
+40,19,Mohammed Kudus,FW,Ghana

@@ -1,0 +1,12 @@
+name: sandbox_lightdash
+version: "1.0.0"
+
+profile: sandbox_lightdash
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+seeds:
+  sandbox_lightdash:
+    +schema: raw

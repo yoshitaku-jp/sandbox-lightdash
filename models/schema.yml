@@ -1,0 +1,249 @@
+version: 2
+
+models:
+  - name: stg_teams
+    description: チームマスタ
+    columns:
+      - name: team_id
+        tests: [unique, not_null]
+      - name: team_name
+      - name: short_name
+      - name: stadium
+      - name: city
+
+  - name: stg_players
+    description: 選手マスタ
+    columns:
+      - name: player_id
+        tests: [unique, not_null]
+      - name: team_id
+      - name: player_name
+      - name: position
+      - name: nationality
+
+  - name: stg_matches
+    description: 試合結果
+    columns:
+      - name: match_id
+        tests: [unique, not_null]
+      - name: matchday
+      - name: match_date
+      - name: home_team_id
+      - name: away_team_id
+      - name: home_goals
+      - name: away_goals
+      - name: result
+
+  - name: stg_goals
+    description: 得点記録
+    columns:
+      - name: goal_id
+        tests: [unique, not_null]
+      - name: match_id
+      - name: player_id
+      - name: team_id
+      - name: minute
+      - name: is_penalty
+      - name: is_own_goal
+
+  - name: team_standings
+    description: プレミアリーグ順位表。勝ち点・得失点差でチーム成績を一覧。
+    meta:
+      label: 順位表
+    columns:
+      - name: team_id
+        tests: [unique, not_null]
+        meta:
+          dimension:
+            type: number
+            hidden: true
+      - name: team_name
+        description: チーム名
+        meta:
+          dimension:
+            type: string
+            label: チーム
+      - name: short_name
+        description: 略称
+        meta:
+          dimension:
+            type: string
+            label: 略称
+      - name: stadium
+        description: ホームスタジアム
+        meta:
+          dimension:
+            type: string
+            label: スタジアム
+      - name: city
+        description: 都市
+        meta:
+          dimension:
+            type: string
+            label: 都市
+      - name: matches_played
+        description: 試合数
+        meta:
+          dimension:
+            type: number
+            label: 試合数
+          metrics:
+            total_matches:
+              type: sum
+              label: 総試合数
+      - name: wins
+        description: 勝利数
+        meta:
+          dimension:
+            type: number
+            label: 勝
+          metrics:
+            total_wins:
+              type: sum
+              label: 総勝利数
+      - name: draws
+        description: 引き分け数
+        meta:
+          dimension:
+            type: number
+            label: 分
+          metrics:
+            total_draws:
+              type: sum
+              label: 総引分数
+      - name: losses
+        description: 敗北数
+        meta:
+          dimension:
+            type: number
+            label: 敗
+          metrics:
+            total_losses:
+              type: sum
+              label: 総敗北数
+      - name: goals_for
+        description: 得点
+        meta:
+          dimension:
+            type: number
+            label: 得点
+          metrics:
+            total_goals_for:
+              type: sum
+              label: 総得点
+            avg_goals_per_match:
+              type: average
+              label: 1試合平均得点
+      - name: goals_against
+        description: 失点
+        meta:
+          dimension:
+            type: number
+            label: 失点
+          metrics:
+            total_goals_against:
+              type: sum
+              label: 総失点
+      - name: goal_difference
+        description: 得失点差
+        meta:
+          dimension:
+            type: number
+            label: 得失点差
+      - name: points
+        description: 勝ち点
+        meta:
+          dimension:
+            type: number
+            label: 勝ち点
+          metrics:
+            total_points:
+              type: sum
+              label: 総勝ち点
+
+  - name: player_stats
+    description: 選手別得点ランキング。ゴール数・PK・平均得点時間を分析。
+    meta:
+      label: 選手スタッツ
+    columns:
+      - name: player_id
+        tests: [unique, not_null]
+        meta:
+          dimension:
+            type: number
+            hidden: true
+      - name: player_name
+        description: 選手名
+        meta:
+          dimension:
+            type: string
+            label: 選手名
+      - name: position
+        description: ポジション
+        meta:
+          dimension:
+            type: string
+            label: ポジション
+      - name: nationality
+        description: 国籍
+        meta:
+          dimension:
+            type: string
+            label: 国籍
+      - name: team_name
+        description: 所属チーム
+        meta:
+          dimension:
+            type: string
+            label: チーム
+      - name: team_short_name
+        description: チーム略称
+        meta:
+          dimension:
+            type: string
+            label: チーム略称
+      - name: total_goals
+        description: 総得点
+        meta:
+          dimension:
+            type: number
+            label: ゴール数
+          metrics:
+            sum_goals:
+              type: sum
+              label: 総ゴール数
+            avg_goals:
+              type: average
+              label: 平均ゴール数
+      - name: penalty_goals
+        description: PK得点
+        meta:
+          dimension:
+            type: number
+            label: PK
+          metrics:
+            sum_penalties:
+              type: sum
+              label: PK得点合計
+      - name: open_play_goals
+        description: 流れからの得点
+        meta:
+          dimension:
+            type: number
+            label: 流れからのゴール
+      - name: earliest_goal_minute
+        description: 最速ゴール（分）
+        meta:
+          dimension:
+            type: number
+            label: 最速ゴール(分)
+      - name: avg_goal_minute
+        description: 平均得点時間（分）
+        meta:
+          dimension:
+            type: number
+            label: 平均得点時間(分)
+          metrics:
+            league_avg_goal_minute:
+              type: average
+              label: リーグ平均得点時間

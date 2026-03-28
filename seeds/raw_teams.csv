@@ -1,0 +1,21 @@
+team_id,team_name,short_name,stadium,city
+1,Arsenal,ARS,Emirates Stadium,London
+2,Aston Villa,AVL,Villa Park,Birmingham
+3,Bournemouth,BOU,Vitality Stadium,Bournemouth
+4,Brentford,BRE,Gtech Community Stadium,London
+5,Brighton,BHA,Amex Stadium,Brighton
+6,Chelsea,CHE,Stamford Bridge,London
+7,Crystal Palace,CRY,Selhurst Park,London
+8,Everton,EVE,Goodison Park,Liverpool
+9,Fulham,FUL,Craven Cottage,London
+10,Ipswich Town,IPS,Portman Road,Ipswich
+11,Leicester City,LEI,King Power Stadium,Leicester
+12,Liverpool,LIV,Anfield,Liverpool
+13,Manchester City,MCI,Etihad Stadium,Manchester
+14,Manchester United,MUN,Old Trafford,Manchester
+15,Newcastle United,NEW,St James Park,Newcastle
+16,Nottingham Forest,NFO,City Ground,Nottingham
+17,Southampton,SOU,St Marys Stadium,Southampton
+18,Tottenham Hotspur,TOT,Tottenham Hotspur Stadium,London
+19,West Ham United,WHU,London Stadium,London
+20,Wolverhampton,WOL,Molineux Stadium,Wolverhampton

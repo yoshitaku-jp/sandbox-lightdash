@@ -1,0 +1,17 @@
+# Python / uv
+.venv/
+__pycache__/
+*.pyc
+
+# dbt
+target/
+dbt_packages/
+logs/
+.user.yml
+
+# Docker
+pg_data/
+minio_data/
+
+# Lightdash CLI
+.lightdash-metadata.json
